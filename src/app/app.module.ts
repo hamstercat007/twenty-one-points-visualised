@@ -12,7 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
-  { path: 'user', component: UserViewComponent},
+  { path: 'user/:userName', component: UserViewComponent},
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
