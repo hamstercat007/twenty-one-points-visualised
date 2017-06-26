@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserViewComponent implements OnInit {
 
-  private userName: string;
+  userName: string;
 
   constructor(private route: ActivatedRoute) { }
 

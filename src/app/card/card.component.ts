@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
 })
 export class CardComponent implements OnInit {
 
+  userName: string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  private send(userName: string): void {
+  public send(userName: string): void {
         this.router.navigate(['/user', userName]);
     }
 
