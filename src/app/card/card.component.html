@@ -1,6 +1,11 @@
 <div class="card card-1">
-    <div class="title">Hello,
-        <input #textbox type="text" (keyup.enter)="send(userName)" class="userName" [(ngModel)]="userName" required>
+    <div class="title">
+        <span class="hello">Hello,</span>
+
+        <md-input-container>
+            <input mdInput #textbox type="text" (keyup.enter)="send(userName)" [(ngModel)]="userName" placeholder="Your name" required>
+        </md-input-container>
+
     </div>
     <button md-raised-button color="accent" (click)="send(userName)" class="goButton">Go</button>
 </div>

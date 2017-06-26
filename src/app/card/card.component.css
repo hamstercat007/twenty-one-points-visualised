@@ -5,7 +5,7 @@
     height: 200px;
     margin: 1rem;
     position: relative;
-    width: 400px;
+    width: 300px;
 }
 
 .card-1 {
@@ -15,27 +15,15 @@
 
 .title {
     margin-top: 40px;
+}
+
+.hello {
     font-size: 30px;
-}
-
-.userName {
-    outline: 0;
-    border-width: 0 0 2px 0;
-    border-color: #3f51b5;
-    width: 195px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.userName:focus {
-    border-color: #ff4081;
-}
-
-.userName[type="text"] {
-    font-size: 28px;
+    margin-right: 10px;
 }
 
 .goButton {
-    margin-top: 60px;
-    width: 300px;
+    margin-top: 20px;
+    width: 260px;
+    height: 40px;
 }
