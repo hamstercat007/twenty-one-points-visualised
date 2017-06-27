@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
+import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-user-view',
@@ -24,7 +25,7 @@ export class UserViewComponent implements OnInit {
   database: AngularFireDatabase;
   observableData: FirebaseObjectObservable<any[]>;
 
-  constructor(private route: ActivatedRoute, public db: AngularFireDatabase) {
+  constructor(public snackBar: MdSnackBar, private route: ActivatedRoute, public db: AngularFireDatabase) {
     this.database = db;
   }
 
@@ -45,6 +46,12 @@ export class UserViewComponent implements OnInit {
 
   update() {
     this.observableData.set(this.data);
+  }
+
+  openSnackBar() {
+    this.snackBar.open('Alright... Remember to keep updating the table everyday!', 'Dismiss', {
+      duration: 5000,
+    });
   }
 
 }

@@ -18,8 +18,8 @@
                 </md-list>
             </md-card-content>
             <md-card-actions>
-                <button md-button>BRING IT ON!</button>
-                <button md-button>HOME</button>
+                <button md-button (click)="openSnackBar()">BRING IT ON!</button>
+                <button md-button routerLink="/">HOME</button>
             </md-card-actions>
         </md-card>
     </div>
@@ -27,17 +27,17 @@
     <div class="item item-2" fxFlex="60%">
         <md-card>
             <md-card-header>
-                <div md-card-avatar class="rules-card-avatar"></div>
+                <div md-card-avatar class="score-card-avatar"></div>
                 <md-card-title>Hello {{userName}}</md-card-title>
                 <md-card-subtitle>Add your score below</md-card-subtitle>
             </md-card-header>
             <md-card-content>
 
                 <md-grid-list cols="8">
-                    <md-grid-tile [style.border-right]="'1px solid #ddd'">
+                    <md-grid-tile [style.border-right]="'1px solid #ddd'" [style.border-bottom]="'1px solid #ddd'" [style.border-top]="'1px solid #ddd'">
                         Criteria
                     </md-grid-tile>
-                    <md-grid-tile *ngFor="let day of data">
+                    <md-grid-tile *ngFor="let day of data" [style.border-bottom]="'1px solid #ddd'" [style.border-top]="'1px solid #ddd'">
                         {{day.day}}
                     </md-grid-tile>
 

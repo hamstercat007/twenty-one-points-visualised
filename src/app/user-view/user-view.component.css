@@ -7,6 +7,11 @@
     background-size: cover;
 }
 
+.score-card-avatar {
+    background-image: url('https://bugs.swift.org/secure/useravatar?size=small&avatarId=10341');
+    background-size: cover;
+}
+
 .rules-card-content-title {
     font-size: 16px;
     font-weight: bold;
