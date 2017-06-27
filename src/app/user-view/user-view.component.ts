@@ -11,13 +11,13 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 export class UserViewComponent implements OnInit {
   data = [
-    {id: 0, name: 'Mon', firstRule: false, secondRule: false, thirdRule: false},
-    {id: 1, name: 'Tues', firstRule: false, secondRule: false, thirdRule: false},
-    {id: 2, name: 'Wed', firstRule: false, secondRule: false, thirdRule: false},
-    {id: 3, name: 'Thur', firstRule: false, secondRule: false, thirdRule: false},
-    {id: 4, name: 'Fri', firstRule: false, secondRule: false, thirdRule: false},
-    {id: 5, name: 'Sat', firstRule: false, secondRule: false, thirdRule: false},
-    {id: 6, name: 'Sun', firstRule: false, secondRule: false, thirdRule: false}
+    {id: 0, day: 'Mon', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 1, day: 'Tues', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 2, day: 'Wed', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 3, day: 'Thur', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 4, day: 'Fri', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 5, day: 'Sat', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 6, day: 'Sun', firstRule: false, secondRule: false, thirdRule: false}
   ];
 
   userName: string;
@@ -31,8 +31,15 @@ export class UserViewComponent implements OnInit {
   ngOnInit() {
 
     this.route.params.subscribe(params => {
-      this.userName = params['userName'];
+      this.userName = params['userName'].toLowerCase();;
       this.observableData = this.database.object('/' + this.userName, {});
+      this.observableData.subscribe(dataFromDb => {
+        if (dataFromDb instanceof Array)  {
+          this.data = dataFromDb;
+        } else {
+          console.log('DB is empty');
+        }
+      });
     });
   }
 
