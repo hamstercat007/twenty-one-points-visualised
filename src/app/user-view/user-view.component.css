@@ -1,7 +1,5 @@
-.rules-card {
-    width: 400px;
-    margin-top: 20px;
-    margin-left: 20px;
+.container {
+    margin: 20px;
 }
 
 .rules-card-avatar {

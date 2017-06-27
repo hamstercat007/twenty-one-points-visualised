@@ -1,24 +1,91 @@
-<md-card class="rules-card">
-    <md-card-header>
-        <div md-card-avatar class="rules-card-avatar"></div>
-        <md-card-title>Rules of the Game</md-card-title>
-        <md-card-subtitle>Week-long competition</md-card-subtitle>
-    </md-card-header>
-    <img md-card-image src="http://www.mydominioncity.com/images/rules.jpg">
-    <md-card-content>
-        <p class="rules-card-content-title">
-            You can earn 3 points per day:
-        </p>
-        <md-list>
-            <md-list-item> 1 Point if you exercise for 30 minutes </md-list-item>
-            <md-list-item> 1 Point if you don't have aritifical sugars </md-list-item>
-            <md-list-item> 1 Point if you don't drink alcohol </md-list-item>
-        </md-list>
-    </md-card-content>
-    <md-card-actions>
-        <button md-button>GOT IT</button>
-        <button md-button>HOME</button>
-    </md-card-actions>
-</md-card>
+<div class="container" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="20px">
+    <div class="item item-1" fxFlex="40%">
+        <md-card>
+            <md-card-header>
+                <div md-card-avatar class="rules-card-avatar"></div>
+                <md-card-title>Rules of the Game</md-card-title>
+                <md-card-subtitle>Week-long competition</md-card-subtitle>
+            </md-card-header>
+            <img md-card-image src="http://www.mydominioncity.com/images/rules.jpg">
+            <md-card-content>
+                <p class="rules-card-content-title">
+                    You can earn 3 points per day:
+                </p>
+                <md-list>
+                    <md-list-item> 1 Point if you exercise for 30 minutes </md-list-item>
+                    <md-list-item> 1 Point if you don't have aritifical sugars </md-list-item>
+                    <md-list-item> 1 Point if you don't drink alcohol </md-list-item>
+                </md-list>
+            </md-card-content>
+            <md-card-actions>
+                <button md-button>GOT IT</button>
+                <button md-button>HOME</button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+    <div class="item item-2" fxFlex="60%">
+        <md-card>
+            <md-card-header>
+                <div md-card-avatar class="rules-card-avatar"></div>
+                <md-card-title>Hello {{userName}}</md-card-title>
+                <md-card-subtitle>Add your score below</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+                <md-list>
+                    <md-list-item>
+                        <span>Monday</span>
+                        <md-input-container>
+                            <input mdInput type="text" (keyup.enter)="send()" [(ngModel)]="mondayScore">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <span>Tuesday</span>
+                        <md-input-container>
+                            <input mdInput type="text" (keyup.enter)="send()" [(ngModel)]="tuesdayScore">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <span>Wednesday</span>
+                        <md-input-container>
+                            <input mdInput type="text" (keyup.enter)="send()" [(ngModel)]="wednesdayScore">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <span>Thursday</span>
+                        <md-input-container>
+                            <input mdInput type="text" (keyup.enter)="send()" [(ngModel)]="thursdayScore">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <span>Friday</span>
+                        <md-input-container>
+                            <input mdInput type="text" (keyup.enter)="send()" [(ngModel)]="fridayScore">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <span>Saturday</span>
+                        <md-input-container>
+                            <input mdInput type="text" (keyup.enter)="send()" [(ngModel)]="saturdayScore">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <span>Sunday</span>
+                        <md-input-container>
+                            <input mdInput type="text" (keyup.enter)="send()" [(ngModel)]="sundayScore">
+                        </md-input-container>
+                    </md-list-item>
+                </md-list>
+            </md-card-content>
+        </md-card>
+    </div>
+
+</div>
+
+
+
+
+
+
 
 <!--Go to the <a routerLink="/" routerLinkActive="active">Home Page</a>-->

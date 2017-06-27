@@ -5,6 +5,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
@@ -22,6 +25,15 @@ const appRoutes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 
+export const firebaseConfig = {
+    apiKey: 'AIzaSyDjx8yKcjJ7-ww2mFVqp8EnYo01ZPQnjDY',
+    authDomain: 'points-visualised.firebaseapp.com',
+    databaseURL: 'https://points-visualised.firebaseio.com',
+    projectId: 'points-visualised',
+    storageBucket: 'points-visualised.appspot.com',
+    messagingSenderId: '167979637178'
+  };
+
 
 @NgModule({
   declarations: [
@@ -37,7 +49,10 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
