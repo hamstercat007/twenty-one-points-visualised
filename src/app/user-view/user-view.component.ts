@@ -8,18 +8,21 @@ import { AngularFireAuth } from 'angularfire2/auth';
   templateUrl: './user-view.component.html',
   styleUrls: ['./user-view.component.css']
 })
-export class UserViewComponent implements OnInit {
 
-  database: AngularFireDatabase;
+export class UserViewComponent implements OnInit {
+  data = [
+    {id: 0, name: 'Mon', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 1, name: 'Tues', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 2, name: 'Wed', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 3, name: 'Thur', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 4, name: 'Fri', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 5, name: 'Sat', firstRule: false, secondRule: false, thirdRule: false},
+    {id: 6, name: 'Sun', firstRule: false, secondRule: false, thirdRule: false}
+  ];
+
   userName: string;
-  mondayScore = 0;
-  tuesdayScore = 0;
-  wednesdayScore = 0;
-  thursdayScore = 0;
-  fridayScore = 0;
-  saturdayScore = 0;
-  sundayScore = 0;
-  items: FirebaseObjectObservable<any[]>;
+  database: AngularFireDatabase;
+  observableData: FirebaseObjectObservable<any[]>;
 
   constructor(private route: ActivatedRoute, public db: AngularFireDatabase) {
     this.database = db;
@@ -29,22 +32,12 @@ export class UserViewComponent implements OnInit {
 
     this.route.params.subscribe(params => {
       this.userName = params['userName'];
-      this.items = this.database.object('/' + this.userName, {});
+      this.observableData = this.database.object('/' + this.userName, {});
     });
   }
 
-  send() {
-    const data = {
-      monday: this.mondayScore,
-      tuesday: this.tuesdayScore,
-      wednesday: this.wednesdayScore,
-      thursday: this.thursdayScore,
-      friday: this.fridayScore,
-      saturday: this.saturdayScore,
-      sunday: this.sundayScore
-    };
-
-    this.items.set(data);
-}
+  update() {
+    this.observableData.set(this.data);
+  }
 
 }
