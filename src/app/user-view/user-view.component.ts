@@ -25,6 +25,15 @@ export class UserViewComponent implements OnInit {
   database: AngularFireDatabase;
   observableData: FirebaseObjectObservable<any[]>;
 
+  chart: any;
+  options = {
+    title: {text: ''},
+    series: [{
+      name: 'Weekly Performance',
+      data: [],
+    }]
+  };
+
   constructor(public snackBar: MdSnackBar, private route: ActivatedRoute, public db: AngularFireDatabase) {
     this.database = db;
   }
@@ -40,6 +49,8 @@ export class UserViewComponent implements OnInit {
         } else {
           console.log('DB is empty');
         }
+
+        this.updateChart();
       });
     });
   }
@@ -48,10 +59,26 @@ export class UserViewComponent implements OnInit {
     this.observableData.set(this.data);
   }
 
+  updateChart() {
+    const monday = +this.data[0].firstRule + +this.data[0].secondRule + +this.data[0].thirdRule;
+    const tuesday = +this.data[1].firstRule + +this.data[1].secondRule + +this.data[1].thirdRule;
+    const wednesday = +this.data[2].firstRule + +this.data[2].secondRule + +this.data[2].thirdRule;
+    const thursday = +this.data[3].firstRule + +this.data[3].secondRule + +this.data[3].thirdRule;
+    const friday = +this.data[4].firstRule + +this.data[4].secondRule + +this.data[4].thirdRule;
+    const saturday = +this.data[5].firstRule + +this.data[5].secondRule + +this.data[5].thirdRule;
+    const sunday = +this.data[6].firstRule + +this.data[6].secondRule + +this.data[6].thirdRule;
+
+    this.chart.series[0].setData([monday, tuesday, wednesday, thursday, friday, saturday, sunday]);
+  }
+
   openSnackBar() {
     this.snackBar.open('Alright... Remember to keep updating the table everyday!', 'Dismiss', {
       duration: 5000,
     });
+  }
+
+  saveInstance(chartInstance) {
+    this.chart = chartInstance;
   }
 
 }

@@ -69,8 +69,18 @@
                 <button md-button>SHARE</button>
             </md-card-actions>
         </md-card>
-    </div>
 
+        <md-card class="chart-card">
+            <md-card-header>
+                <div md-card-avatar class="chart-card-avatar"></div>
+                <md-card-title>Visualising Performance</md-card-title>
+                <md-card-subtitle>for {{userName}}</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+                <chart [(options)]="options" (load)="saveInstance($event.context)"></chart>
+            </md-card-content>
+        </md-card>
+    </div>
 </div>
 
 

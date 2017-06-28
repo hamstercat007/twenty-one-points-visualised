@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ChartModule } from 'angular2-highcharts';
+import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
+import * as highcharts from 'highcharts';
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
@@ -34,6 +37,9 @@ export const firebaseConfig = {
     messagingSenderId: '167979637178'
   };
 
+export function highchartsFactory() {
+  return highcharts;
+}
 
 @NgModule({
   declarations: [
@@ -52,9 +58,13 @@ export const firebaseConfig = {
     BrowserAnimationsModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ChartModule
   ],
-  providers: [],
+  providers: [{
+      provide: HighchartsStatic,
+      useFactory: highchartsFactory
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
