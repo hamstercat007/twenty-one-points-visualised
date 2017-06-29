@@ -8,11 +8,26 @@
 }
 
 .chart-card-avatar {
-    background-image: url('http://www.esmba.co.uk/s/cc_images/cache_2146326.jpg');
+    background-image: url('https://image.freepik.com/free-icon/seo-performance-graphic-in-a-circle_318-50374.jpg');
     background-size: cover;
 }
 
 chart {
     display: block;
     width: 100% !important;
+}
+
+.exercise-avatar {
+    background-image: url('https://image.freepik.com/free-icon/exercise-strengthen_318-27837.jpg');
+    background-size: cover;
+}
+
+.no-alcohol-avatar {
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/311812-200.png');
+    background-size: cover;
+}
+
+.healthy-food-avatar {
+    background-image: url('https://image.freepik.com/free-icon/junk-food-prohibited_318-27334.jpg');
+    background-size: cover;
 }

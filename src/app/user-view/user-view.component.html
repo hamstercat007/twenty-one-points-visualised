@@ -10,28 +10,28 @@
 
                 <md-grid-list cols="8">
                     <md-grid-tile [style.border-right]="'1px solid #ddd'" [style.border-bottom]="'1px solid #ddd'" [style.border-top]="'1px solid #ddd'">
-                        Criteria
+
                     </md-grid-tile>
                     <md-grid-tile *ngFor="let day of data" [style.border-bottom]="'1px solid #ddd'" [style.border-top]="'1px solid #ddd'">
                         {{day.day}}
                     </md-grid-tile>
 
                     <md-grid-tile [style.border-right]="'1px solid #ddd'">
-                        Exercise?
+                        <div md-card-avatar class="exercise-avatar"></div>
                     </md-grid-tile>
                     <md-grid-tile *ngFor="let dataPoint of data; let i=index">
                         <md-checkbox [(ngModel)]="data[i].firstRule" (change)="update()"></md-checkbox>
                     </md-grid-tile>
 
                     <md-grid-tile [style.border-right]="'1px solid #ddd'">
-                        No Alcohol?
+                        <div md-card-avatar class="no-alcohol-avatar"></div>
                     </md-grid-tile>
                     <md-grid-tile *ngFor="let dataPoint of data; let i=index">
                         <md-checkbox [(ngModel)]="data[i].secondRule" (change)="update()"></md-checkbox>
                     </md-grid-tile>
 
                     <md-grid-tile [style.border-right]="'1px solid #ddd'">
-                        Good Food?
+                        <div md-card-avatar class="healthy-food-avatar"></div>
                     </md-grid-tile>
                     <md-grid-tile *ngFor="let dataPoint of data; let i=index">
                         <md-checkbox [(ngModel)]="data[i].thirdRule" (change)="update()"></md-checkbox>

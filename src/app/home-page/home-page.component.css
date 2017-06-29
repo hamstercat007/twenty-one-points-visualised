@@ -2,12 +2,26 @@
     margin: 20px;
 }
 
+.start-card-avatar {
+    background-image: url('http://www.i-locate.eu/data/uploads/2013/05/iconmonstr-trophy-12-icon-256.png');
+    background-size: cover;
+}
+
+.mat-input-container {
+    display: block;
+    width: 100% !important;
+}
+
+.leaderboard-card-avatar {
+    background-image: url('https://badgeos.org/wp-content/uploads/edd/2013/11/leaderboard-300x300.png');
+    background-size: cover;
+}
+
 .rules-card-avatar {
     background-image: url('http://www.esmba.co.uk/s/cc_images/cache_2146326.jpg');
     background-size: cover;
 }
 
-.rules-card-content-title {
-    font-size: 16px;
-    font-weight: bold;
+.mat-list-item {
+    font-size: 14px;
 }

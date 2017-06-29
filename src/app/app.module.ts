@@ -13,7 +13,6 @@ import { HighchartsStatic } from 'angular2-highcharts/dist/HighchartsService';
 import * as highcharts from 'highcharts';
 
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -44,7 +43,6 @@ export function highchartsFactory() {
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
     HomePageComponent,
     UserViewComponent,
     PageNotFoundComponent
