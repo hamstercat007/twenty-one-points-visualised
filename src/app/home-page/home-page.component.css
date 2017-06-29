@@ -1,0 +1,13 @@
+.container {
+    margin: 20px;
+}
+
+.rules-card-avatar {
+    background-image: url('http://www.esmba.co.uk/s/cc_images/cache_2146326.jpg');
+    background-size: cover;
+}
+
+.rules-card-content-title {
+    font-size: 16px;
+    font-weight: bold;
+}

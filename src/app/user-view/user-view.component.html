@@ -2,31 +2,6 @@
     <div class="item item-1" fxFlex="40%">
         <md-card>
             <md-card-header>
-                <div md-card-avatar class="rules-card-avatar"></div>
-                <md-card-title>Rules of the Game</md-card-title>
-                <md-card-subtitle>Week-long competition</md-card-subtitle>
-            </md-card-header>
-            <img md-card-image src="http://www.mydominioncity.com/images/rules.jpg">
-            <md-card-content>
-                <p class="rules-card-content-title">
-                    You can earn 3 points per day:
-                </p>
-                <md-list>
-                    <md-list-item> 1 Point if you exercise for 30 minutes </md-list-item>
-                    <md-list-item> 1 Point if you don't have aritifical sugars </md-list-item>
-                    <md-list-item> 1 Point if you don't drink alcohol </md-list-item>
-                </md-list>
-            </md-card-content>
-            <md-card-actions>
-                <button md-button (click)="openSnackBar()">BRING IT ON!</button>
-                <button md-button routerLink="/">HOME</button>
-            </md-card-actions>
-        </md-card>
-    </div>
-
-    <div class="item item-2" fxFlex="60%">
-        <md-card>
-            <md-card-header>
                 <div md-card-avatar class="score-card-avatar"></div>
                 <md-card-title>Hello {{userName}}</md-card-title>
                 <md-card-subtitle>Add your score below</md-card-subtitle>
@@ -69,7 +44,9 @@
                 <button md-button>SHARE</button>
             </md-card-actions>
         </md-card>
+    </div>
 
+    <div class="item item-2" fxFlex="60%">
         <md-card class="chart-card">
             <md-card-header>
                 <div md-card-avatar class="chart-card-avatar"></div>
@@ -82,11 +59,3 @@
         </md-card>
     </div>
 </div>
-
-
-
-
-
-
-
-<!--Go to the <a routerLink="/" routerLinkActive="active">Home Page</a>-->

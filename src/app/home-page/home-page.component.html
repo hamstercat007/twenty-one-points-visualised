@@ -1,1 +1,44 @@
-<app-card></app-card>
+<div class="container" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="20px">
+    <div class="item item-1" fxFlex="60%">
+        <!--<app-card></app-card>-->
+        <md-card>
+            <md-card-header>
+                <md-card-title>Up for a game?</md-card-title>
+                <md-card-subtitle>Tell me your name and let's get started!</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+                <md-input-container>
+                    <input mdInput #textbox type="text" class="userName" (keyup.enter)="send(userName)" [(ngModel)]="userName" placeholder="Your name" required>
+                </md-input-container>
+            </md-card-content>
+            <md-card-actions>
+                <button md-raised-button color="accent" (click)="send(userName)" class="goButton">Go</button>
+            </md-card-actions>
+        </md-card>
+
+    </div>
+
+    <div class="item item-2" fxFlex="40%">
+        <md-card>
+            <md-card-header>
+                <div md-card-avatar class="rules-card-avatar"></div>
+                <md-card-title>Rules of the Game</md-card-title>
+                <md-card-subtitle>Week-long competition</md-card-subtitle>
+            </md-card-header>
+            <img md-card-image src="http://www.mydominioncity.com/images/rules.jpg">
+            <md-card-content>
+                <p class="rules-card-content-title">
+                    You can earn 3 points per day:
+                </p>
+                <md-list>
+                    <md-list-item> 1 Point if you exercise for 30 minutes </md-list-item>
+                    <md-list-item> 1 Point if you don't have aritifical sugars </md-list-item>
+                    <md-list-item> 1 Point if you don't drink alcohol </md-list-item>
+                </md-list>
+            </md-card-content>
+            <md-card-actions>
+                <button md-button (click)="openSnackBar()">BRING IT ON!</button>
+            </md-card-actions>
+        </md-card>
+    </div>
+</div>

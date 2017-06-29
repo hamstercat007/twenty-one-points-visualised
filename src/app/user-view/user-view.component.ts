@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-user-view',
@@ -34,7 +33,7 @@ export class UserViewComponent implements OnInit {
     }]
   };
 
-  constructor(public snackBar: MdSnackBar, private route: ActivatedRoute, public db: AngularFireDatabase) {
+  constructor(private route: ActivatedRoute, public db: AngularFireDatabase) {
     this.database = db;
   }
 
@@ -69,12 +68,6 @@ export class UserViewComponent implements OnInit {
     const sunday = +this.data[6].firstRule + +this.data[6].secondRule + +this.data[6].thirdRule;
 
     this.chart.series[0].setData([monday, tuesday, wednesday, thursday, friday, saturday, sunday]);
-  }
-
-  openSnackBar() {
-    this.snackBar.open('Alright... Remember to keep updating the table everyday!', 'Dismiss', {
-      duration: 5000,
-    });
   }
 
   saveInstance(chartInstance) {
