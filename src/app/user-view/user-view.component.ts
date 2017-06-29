@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-user-view',
@@ -38,7 +37,6 @@ export class UserViewComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.route.params.subscribe(params => {
       this.userName = params['userName'].toLowerCase();;
       this.observableData = this.database.object('/' + this.userName, {});

@@ -10,10 +10,8 @@
                 <md-input-container>
                     <input mdInput #textbox type="text" (keyup.enter)="send(userName)" [(ngModel)]="userName" placeholder="Your name" required>
                 </md-input-container>
-            </md-card-content>
-            <md-card-actions>
                 <button md-raised-button color="accent" (click)="send(userName)" class="goButton">Go</button>
-            </md-card-actions>
+            </md-card-content>
         </md-card>
     </div>
 
