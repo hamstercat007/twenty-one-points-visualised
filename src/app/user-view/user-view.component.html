@@ -20,21 +20,21 @@
                         <div md-card-avatar class="exercise-avatar"></div>
                     </md-grid-tile>
                     <md-grid-tile *ngFor="let dataPoint of data; let i=index">
-                        <md-checkbox [(ngModel)]="data[i].firstRule" (change)="update()"></md-checkbox>
+                        <md-checkbox color="primary" [(ngModel)]="data[i].firstRule" (change)="update()"></md-checkbox>
                     </md-grid-tile>
 
                     <md-grid-tile [style.border-right]="'1px solid #ddd'">
                         <div md-card-avatar class="no-alcohol-avatar"></div>
                     </md-grid-tile>
                     <md-grid-tile *ngFor="let dataPoint of data; let i=index">
-                        <md-checkbox [(ngModel)]="data[i].secondRule" (change)="update()"></md-checkbox>
+                        <md-checkbox color="primary" [(ngModel)]="data[i].secondRule" (change)="update()"></md-checkbox>
                     </md-grid-tile>
 
                     <md-grid-tile [style.border-right]="'1px solid #ddd'">
                         <div md-card-avatar class="healthy-food-avatar"></div>
                     </md-grid-tile>
                     <md-grid-tile *ngFor="let dataPoint of data; let i=index">
-                        <md-checkbox [(ngModel)]="data[i].thirdRule" (change)="update()"></md-checkbox>
+                        <md-checkbox color="primary" [(ngModel)]="data[i].thirdRule" (change)="update()"></md-checkbox>
                     </md-grid-tile>
 
                 </md-grid-list>
