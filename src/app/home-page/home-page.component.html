@@ -23,7 +23,12 @@
                 <md-card-subtitle>Let's see the top 5 performers!</md-card-subtitle>
             </md-card-header>
             <md-card-content>
-                Coming Soon....
+                <md-list>
+                    <md-list-item *ngFor="let score of topFiveScores">
+                        <md-icon md-list-icon>star</md-icon>
+                        {{score[0]}} <span class="leaderboard-score">{{score[1]}} points</span>
+                    </md-list-item>
+                </md-list>
             </md-card-content>
         </md-card>
     </div>
@@ -37,9 +42,20 @@
             </md-card-header>
             <md-card-content>
                 <md-list>
-                    <md-list-item>Earn one point if you exercise (min 30 mins) </md-list-item>
-                    <md-list-item>Earn one point if you don't have aritifical sugars </md-list-item>
-                    <md-list-item>Earn one point if you don't drink alcohol </md-list-item>
+                    <md-list-item>
+                        <md-icon md-list-icon>looks_one</md-icon>
+                        Earn a point if you exercise (min 30 mins)
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <md-list-item>
+                        <md-icon md-list-icon>looks_two</md-icon>
+                        Earn a point if you don't have aritifical sugars
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <md-list-item>
+                        <md-icon md-list-icon>looks_3</md-icon>
+                        Earn a point if you don't drink alcohol
+                    </md-list-item>
                 </md-list>
             </md-card-content>
             <md-card-actions>

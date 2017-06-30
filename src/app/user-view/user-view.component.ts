@@ -38,7 +38,7 @@ export class UserViewComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.userName = params['userName'].toLowerCase();;
+      this.userName = params['userName'];
       this.observableData = this.database.object('/' + this.userName, {});
       this.observableData.subscribe(dataFromDb => {
         if (dataFromDb instanceof Array)  {

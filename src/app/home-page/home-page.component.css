@@ -26,3 +26,7 @@
 .mat-list-item {
     font-size: 14px;
 }
+
+.leaderboard-score {
+    padding-left: 10px
+}
