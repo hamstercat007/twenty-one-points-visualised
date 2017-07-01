@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MdSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
@@ -16,7 +15,7 @@ export class HomePageComponent implements OnInit {
 
   topFiveScores = [];
 
-  constructor(public snackBar: MdSnackBar, private router: Router, public db: AngularFireDatabase) {
+  constructor(public snackBar: MdSnackBar, public db: AngularFireDatabase) {
     this.database = db;
   }
 
@@ -48,9 +47,5 @@ export class HomePageComponent implements OnInit {
     this.snackBar.open('Enter your name and you are ready to rumbleeeee!', 'Dismiss', {
       duration: 5000,
     });
-  }
-
-  public send(userName: string): void {
-    this.router.navigate(['/user', userName]);
   }
 }

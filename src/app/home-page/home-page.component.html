@@ -1,18 +1,6 @@
 <div class="container" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutGap.xs="20px">
     <div class="item item-1" fxFlex="33%">
-        <md-card>
-            <md-card-header>
-                <div md-card-avatar class="start-card-avatar"></div>
-                <md-card-title>Up for a challenge?</md-card-title>
-                <md-card-subtitle>Tell me your name and let's get started!</md-card-subtitle>
-            </md-card-header>
-            <md-card-content>
-                <md-input-container>
-                    <input mdInput #textbox type="text" (keyup.enter)="send(userName)" [(ngModel)]="userName" placeholder="Your name" required>
-                </md-input-container>
-                <button md-raised-button color="accent" (click)="send(userName)" class="goButton">Go</button>
-            </md-card-content>
-        </md-card>
+        <app-login></app-login>
     </div>
 
     <div class="item item-2" fxFlex="33%">

@@ -1,0 +1,10 @@
+.start-card-avatar {
+    background-image: url('http://www.i-locate.eu/data/uploads/2013/05/iconmonstr-trophy-12-icon-256.png');
+    background-size: cover;
+}
+
+.mat-input-container,
+.goButton {
+    display: block;
+    width: 100% !important;
+}
