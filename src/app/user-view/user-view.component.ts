@@ -25,6 +25,10 @@ export class UserViewComponent implements OnInit {
   chart: any;
   options = {
     title: {text: ''},
+    series: [{
+       name: 'Weekly Performance',
+       data: [],
+     }],
     xAxis: {
       categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     }
@@ -62,11 +66,7 @@ export class UserViewComponent implements OnInit {
     const sunday = +this.data[6].firstRule + +this.data[6].secondRule + +this.data[6].thirdRule;
 
     setTimeout(() => {
-      this.chart.addSeries({
-            type: 'line',
-            name: 'Weekly performance',
-            data: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
-        });
+      this.chart.series[0].setData([monday, tuesday, wednesday, thursday, friday, saturday, sunday]);
     }, 500);
   }
 
