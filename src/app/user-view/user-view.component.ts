@@ -20,7 +20,6 @@ export class UserViewComponent implements OnInit {
   ];
 
   userName: string;
-  database: AngularFireDatabase;
   observableData: FirebaseObjectObservable<any[]>;
 
   chart: any;
@@ -32,9 +31,7 @@ export class UserViewComponent implements OnInit {
     }]
   };
 
-  constructor(private route: ActivatedRoute, public db: AngularFireDatabase) {
-    this.database = db;
-  }
+  constructor(private route: ActivatedRoute, public database: AngularFireDatabase) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {

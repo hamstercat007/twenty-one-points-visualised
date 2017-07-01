@@ -19,10 +19,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { RulesComponent } from './rules/rules.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { VisualiseAllComponent } from './visualise-all/visualise-all.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'user/:userName', component: UserViewComponent},
+  {path: 'visualise', component: VisualiseAllComponent},
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -51,7 +53,8 @@ export function highchartsFactory() {
     PageNotFoundComponent,
     LoginComponent,
     RulesComponent,
-    LeaderboardComponent
+    LeaderboardComponent,
+    VisualiseAllComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

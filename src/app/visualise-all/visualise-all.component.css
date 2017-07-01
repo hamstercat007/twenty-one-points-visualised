@@ -1,0 +1,13 @@
+.container {
+    margin: 20px;
+}
+
+.chart-card-avatar {
+    background-image: url('https://image.freepik.com/free-icon/seo-performance-graphic-in-a-circle_318-50374.jpg');
+    background-size: cover;
+}
+
+chart {
+    display: block;
+    width: 100% !important;
+}

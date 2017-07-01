@@ -3,8 +3,18 @@
     background-size: cover;
 }
 
+.visualise-card-avatar {
+    background-image: url('https://d30y9cdsu7xlg0.cloudfront.net/png/16201-200.png');
+    background-size: cover;
+}
+
 .mat-input-container,
 .goButton {
     display: block;
     width: 100% !important;
+}
+
+.orWord {
+    text-align: center;
+    margin-bottom: 15px;
 }

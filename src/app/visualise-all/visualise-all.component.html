@@ -1,0 +1,13 @@
+<md-card class="container">
+    <md-card-header>
+        <div md-card-avatar class="chart-card-avatar"></div>
+        <md-card-title>Visualising All Performances</md-card-title>
+        <md-card-subtitle>For everyone taking part in this challenge</md-card-subtitle>
+    </md-card-header>
+    <md-card-content>
+        <chart [(options)]="options" (load)="saveInstance($event.context)"></chart>
+    </md-card-content>
+    <md-card-actions>
+        <button md-button routerLink="/">HOME</button>
+    </md-card-actions>
+</md-card>
