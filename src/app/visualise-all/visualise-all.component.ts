@@ -23,10 +23,6 @@ export class VisualiseAllComponent implements OnInit {
   ngOnInit() {
     this.observableData = this.database.object('/', {});
     this.observableData.subscribe(dataFromDb => {
-      while (this.chart.series.length > 0) {
-        this.chart.series[0].remove();
-      }
-
       Object.keys(dataFromDb).forEach(key => {
         const data = dataFromDb[key];
         const weeklyScore = [];
@@ -48,7 +44,7 @@ export class VisualiseAllComponent implements OnInit {
             name: key,
             data: weeklyScore
         });
-    }, 500);
+    }, 1000);
   }
 
   saveInstance(chartInstance) {
