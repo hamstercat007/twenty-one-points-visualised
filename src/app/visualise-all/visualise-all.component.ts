@@ -12,7 +12,10 @@ export class VisualiseAllComponent implements OnInit {
   chart: any;
 
   options = {
-    title: {text: ''}
+    title: {text: ''},
+    xAxis: {
+      categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    }
   };
 
   constructor(public database: AngularFireDatabase) { }

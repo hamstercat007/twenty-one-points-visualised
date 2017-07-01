@@ -25,10 +25,9 @@ export class UserViewComponent implements OnInit {
   chart: any;
   options = {
     title: {text: ''},
-    series: [{
-      name: 'Weekly Performance',
-      data: [],
-    }]
+    xAxis: {
+      categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    }
   };
 
   constructor(private route: ActivatedRoute, public database: AngularFireDatabase) {}
@@ -61,11 +60,14 @@ export class UserViewComponent implements OnInit {
     const friday = +this.data[4].firstRule + +this.data[4].secondRule + +this.data[4].thirdRule;
     const saturday = +this.data[5].firstRule + +this.data[5].secondRule + +this.data[5].thirdRule;
     const sunday = +this.data[6].firstRule + +this.data[6].secondRule + +this.data[6].thirdRule;
-    const self = this;
 
-    setTimeout((function() {
-      self.chart.series[0].setData([monday, tuesday, wednesday, thursday, friday, saturday, sunday]);
-    }), 500);
+    setTimeout(() => {
+      this.chart.addSeries({
+            type: 'line',
+            name: 'Weekly performance',
+            data: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+        });
+    }, 500);
   }
 
   saveInstance(chartInstance) {
