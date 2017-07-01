@@ -39,9 +39,15 @@
 
                 </md-grid-list>
             </md-card-content>
-            <md-card-actions>
-                <button md-button routerLink="/">HOME</button>
-                <button md-button routerLink="/visualise">VISUALISE ALL</button>
+        </md-card>
+
+        <md-card class="total-score">
+            <md-card-content>
+                Nice one {{userName}}! you have earned <span class="score">{{score}}</span> points.
+            </md-card-content>
+            <md-card-actions class="total-score-card-action">
+                <button md-raised-button color="accent" routerLink="/">HOME PAGE</button>
+                <button md-raised-button color="primary" routerLink="/visualise">VISUALISE EVERYONE</button>
             </md-card-actions>
         </md-card>
     </div>

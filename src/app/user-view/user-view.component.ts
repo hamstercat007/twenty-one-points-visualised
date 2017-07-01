@@ -21,10 +21,12 @@ export class UserViewComponent implements OnInit {
 
   userName: string;
   observableData: FirebaseObjectObservable<any[]>;
+  score: number;
 
   chart: any;
   options = {
     title: {text: ''},
+    type: 'area',
     series: [{
        name: 'Weekly Performance',
        data: [],
@@ -64,6 +66,7 @@ export class UserViewComponent implements OnInit {
     const friday = +this.data[4].firstRule + +this.data[4].secondRule + +this.data[4].thirdRule;
     const saturday = +this.data[5].firstRule + +this.data[5].secondRule + +this.data[5].thirdRule;
     const sunday = +this.data[6].firstRule + +this.data[6].secondRule + +this.data[6].thirdRule;
+    this.score = monday + tuesday + wednesday + thursday + friday + saturday + sunday;
 
     setTimeout(() => {
       this.chart.series[0].setData([monday, tuesday, wednesday, thursday, friday, saturday, sunday]);

@@ -31,3 +31,16 @@ chart {
     background-image: url('https://image.freepik.com/free-icon/junk-food-prohibited_318-27334.jpg');
     background-size: cover;
 }
+
+.total-score {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.score {
+    font-size: 32px;
+}
+
+.total-score-card-action {
+    margin-bottom: 8px !important;
+}
