@@ -12,7 +12,7 @@ export class VisualiseAllComponent implements OnInit {
   chart: any;
 
   options = {
-    title: {text: ''},
+    title: { text: '' },
     xAxis: {
       categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     }
@@ -23,6 +23,12 @@ export class VisualiseAllComponent implements OnInit {
   ngOnInit() {
     this.observableData = this.database.object('/', {});
     this.observableData.subscribe(dataFromDb => {
+      setTimeout(() => {
+        while (this.chart.series.length > 0) {
+          this.chart.series[0].remove();
+        }
+      }, 1000);
+
       Object.keys(dataFromDb).forEach(key => {
         const data = dataFromDb[key];
         const weeklyScore = [];
@@ -40,10 +46,10 @@ export class VisualiseAllComponent implements OnInit {
   updateChart(key, weeklyScore) {
     setTimeout(() => {
       this.chart.addSeries({
-            type: 'line',
-            name: key,
-            data: weeklyScore
-        });
+        type: 'line',
+        name: key,
+        data: weeklyScore
+      });
     }, 1000);
   }
 
