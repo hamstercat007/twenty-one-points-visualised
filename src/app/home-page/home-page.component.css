@@ -1,16 +1,3 @@
 .container {
     margin: 20px;
 }
-
-.leaderboard-card-avatar {
-    background-image: url('https://badgeos.org/wp-content/uploads/edd/2013/11/leaderboard-300x300.png');
-    background-size: cover;
-}
-
-.mat-list-item {
-    font-size: 14px;
-}
-
-.leaderboard-score {
-    padding-left: 10px
-}

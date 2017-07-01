@@ -4,21 +4,7 @@
     </div>
 
     <div class="item item-2" fxFlex="33%">
-        <md-card>
-            <md-card-header>
-                <div md-card-avatar class="leaderboard-card-avatar"></div>
-                <md-card-title>Leaderboard</md-card-title>
-                <md-card-subtitle>Let's see the top 5 performers!</md-card-subtitle>
-            </md-card-header>
-            <md-card-content>
-                <md-list>
-                    <md-list-item *ngFor="let score of topFiveScores">
-                        <md-icon md-list-icon>star</md-icon>
-                        {{score[0]}} <span class="leaderboard-score">{{score[1]}} points</span>
-                    </md-list-item>
-                </md-list>
-            </md-card-content>
-        </md-card>
+        <app-leaderboard></app-leaderboard>
     </div>
 
     <div class="item item-3" fxFlex="34%">

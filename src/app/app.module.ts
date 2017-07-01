@@ -18,6 +18,7 @@ import { UserViewComponent } from './user-view/user-view.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { RulesComponent } from './rules/rules.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -49,7 +50,8 @@ export function highchartsFactory() {
     UserViewComponent,
     PageNotFoundComponent,
     LoginComponent,
-    RulesComponent
+    RulesComponent,
+    LeaderboardComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
