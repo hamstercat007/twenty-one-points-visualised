@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  userName: string;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  public send(userName: string): void {
-    this.router.navigate(['/user', userName]);
+  public navigateToUserPage(): void {
+    this.router.navigate(['/user', this.userName]);
   }
 
 }

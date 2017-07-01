@@ -8,7 +8,6 @@ import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/data
 })
 export class HomePageComponent implements OnInit {
 
-  userName: string;
   database: AngularFireDatabase;
   observableData: FirebaseObjectObservable<any[]>;
 

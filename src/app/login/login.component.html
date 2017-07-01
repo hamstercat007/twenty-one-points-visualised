@@ -6,8 +6,8 @@
     </md-card-header>
     <md-card-content>
         <md-input-container>
-            <input mdInput #textbox type="text" (keyup.enter)="send(userName)" [(ngModel)]="userName" placeholder="Your name" required>
+            <input mdInput #textbox type="text" (keyup.enter)="navigateToUserPage()" [(ngModel)]="userName" placeholder="Your name" required>
         </md-input-container>
-        <button md-raised-button color="accent" (click)="send(userName)" class="goButton">Go</button>
+        <button md-raised-button color="accent" (click)="navigateToUserPage()" class="goButton">Go</button>
     </md-card-content>
 </md-card>
